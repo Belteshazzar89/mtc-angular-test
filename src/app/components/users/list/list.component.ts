@@ -15,6 +15,8 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {}
 
   constructor(userService: UserService) {
+    // Users are an Observable, there is no need to subscribe as the
+    // 'async' pipe in the template continues to get results as they are sent
     this.users = userService.getUsers();
   }
 }

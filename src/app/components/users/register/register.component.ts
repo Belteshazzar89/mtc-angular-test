@@ -49,6 +49,8 @@ export class UserRegisterComponent implements OnInit {
 
   onSubmit(formGroup: FormGroup) {
     this.service.postUser(formGroup.value);
+
+    // Remove values from the form and reset error messages to a pristine state
     this.formRef.resetForm();
     formGroup.reset();
   }
