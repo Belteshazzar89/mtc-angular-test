@@ -1,18 +1,17 @@
 import { TestBed, fakeAsync, flushMicrotasks } from '@angular/core/testing';
-import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
-import * as firebase from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { firestore } from 'firebase/app';
 import { BehaviorSubject } from 'rxjs';
 
 import { UserService } from './users.service';
 import { User } from './user.model';
-import { doesNotReject } from 'assert';
 
 describe('UserService', () => {
   let service: UserService;
   const user = {
     firstName: 'John',
     lastName: 'Doe',
-    birthTimeStamp: firebase.firestore.Timestamp.fromDate(new Date()),
+    birthTimeStamp: firestore.Timestamp.fromDate(new Date()),
     email: 'johndoemtc2@dispostable.com',
     phone: '+15555555555',
   };
