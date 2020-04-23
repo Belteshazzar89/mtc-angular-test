@@ -13,7 +13,7 @@ describe('UserListComponent', () => {
     lastName: 'Test',
     birthDate: new Date(),
     email: 'johndoemtc@dispostable.com',
-    phone: '+15555555555',
+    phone: '15555555555',
   };
 
   // Mock the service, return the above user instead
