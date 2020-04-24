@@ -13,7 +13,7 @@ describe('UserService', () => {
     lastName: 'Doe',
     birthTimeStamp: firestore.Timestamp.fromDate(new Date()),
     email: 'johndoemtc2@dispostable.com',
-    phone: '+15555555555',
+    phone: '15555555555',
   };
 
   beforeEach(() => {
@@ -27,6 +27,7 @@ describe('UserService', () => {
       }),
     };
     TestBed.configureTestingModule({
+      // Instead of calling Firestore, call the stub
       providers: [{ provide: AngularFirestore, useValue: FirestoreStub }],
     });
     service = TestBed.inject(UserService);
@@ -45,7 +46,7 @@ describe('UserService', () => {
       lastName: 'Doe',
       birthDate: new Date(),
       email: 'johndoemtc2@dispostable.com',
-      phone: '+15555555555',
+      phone: '15555555555',
     };
     let resultingUser: User;
     service.postUser(createdUser).then((result) => {
